@@ -51,13 +51,13 @@ export const getQuarter = date => {
   let uploadDate = parseDate(date),
       month = uploadDate.getMonth() + 1;
   switch(true) {
-    case [1,2,3].includes(month):
+    case [3].includes(month):
          return 'FY18 Q1';
     case [4,5,6].includes(month):
          return 'FY18 Q3';
     case [7,8,9].includes(month):
          return 'FY18 Q3';
-    case [10,11,12].includes(month):
+    case [1, 2, 10,11,12].includes(month):
         return 'FY18 Q4';
   }
 }
