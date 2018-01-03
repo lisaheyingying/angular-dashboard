@@ -22,9 +22,9 @@ apiRoutes.get('/:project/teamnew',(req, res) => {
   res.json(requirements);
 })
 
-apiRoutes.get('/:project/team',(req, res) => {
-  let project = req.url.split('/')[1];
-  let requirements = handler.getTeam(project);
-  res.json(requirements);
-})
+//apiRoutes.get('/:project/team',(req, res) => {
+//  let project = req.url.split('/')[1];
+//  let requirements = handler.getTeam(project);
+//  res.json(requirements);
+//})
 export default apiRoutes;
