@@ -67,7 +67,7 @@ function getProjectOnboardArray(project){
   console.log("lisa debug");
   console.log(dateToday);
   console.log(reducedOnboardData);
-  let dateRange = genterateWeekDomain(DATE_RANGE[project].START, dateToday);
+  let dateRange = genterateWeekDomain(DATE_RANGE[project].START, DATE_RANGE[project].END);
   console.log(dateRange);
   let realOnboardArray = [];
   dateRange.forEach(function(date, finalIndex){

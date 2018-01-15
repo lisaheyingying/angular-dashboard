@@ -60,7 +60,7 @@ export const getNextSunday = (dateArray) => {
 // @param start: Date{}
 // @param end: Date{}
 export const genterateWeekDomain = (start, end) => {
-  const weekPeriod =( 7 * 24  + 1) * 3600 * 1000 ;
+  const weekPeriod =7 * 24 * 3600 * 1000 ;
   let strArr = [],
   startTime = start.getTime(),
   endTime = end.getTime();
