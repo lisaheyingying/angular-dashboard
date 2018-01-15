@@ -64,7 +64,11 @@ function getProjectOnboardArray(project){
   let customizedOnBoardData = getNextSunday(onBoardRawData.sort());
   let reducedOnboardData = reduceByDate(customizedOnBoardData);
   let dateToday = new Date();
+  console.log("lisa debug");
+  console.log(dateToday);
+  console.log(reducedOnboardData);
   let dateRange = genterateWeekDomain(DATE_RANGE[project].START, dateToday);
+  console.log(dateRange);
   let realOnboardArray = [];
   dateRange.forEach(function(date, finalIndex){
     let dateIndex = reducedOnboardData.findIndex(dateValuePair=>{
