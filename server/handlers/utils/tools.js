@@ -59,15 +59,27 @@ export const getNextSunday = (dateArray) => {
 }
 // @param start: Date{}
 // @param end: Date{}
-export const genterateWeekDomain = (start, end) => {
-  const weekPeriod =7 * 24 * 3600 * 1000 ;
-  let strArr = [],
-  startTime = start.getTime(),
-  endTime = end.getTime();
-  while(startTime <= endTime) {
-    let tmp = new Date(startTime);
-    strArr.push(tmp.getMonth() + 1 + '/' + tmp.getDate());
-    startTime += weekPeriod;
+// export const genterateWeekDomain = (start, end) => {
+//   let weekPeriod =7 * 24 * 3600 * 1000 ;
+//   let strArr = [],
+//   startTime = start.getTime(),
+//   endTime = end.getTime();
+//   while(startTime <= endTime) {
+//     let tmp = new Date(startTime);
+//     strArr.push(tmp.getMonth() + 1 + '/' + tmp.getDate());
+//     startTime += weekPeriod;
+//   }
+//   return strArr;
+// }
+export const genterateWeekDomain = (start, end) =>{
+  let weekDays =  7;
+  let strArr = [];
+  let startDateTmp = new Date(start);
+  let endDateTmp = new Date(end);
+  while(startDateTmp <= endDateTmp){
+    let tmp = new Date(startDateTmp);
+    strArr.push(tmp.getMonth()+1 + '/' + tmp.getDate());
+    startDateTmp.setDate(startDateTmp.getDate()+ weekDays);
   }
   return strArr;
 }
