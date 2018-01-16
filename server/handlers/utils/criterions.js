@@ -49,15 +49,25 @@ const getWorkDayPeriod = (start, end) => {
 // determine  in which quarter that cv is uploaded
 export const getQuarter = date => {
   let uploadDate = parseDate(date),
-      month = uploadDate.getMonth() + 1;
+      month = uploadDate.getMonth() + 1,
+      day = uploadDate.getDate();
+  
   switch(true) {
-    case [3].includes(month):
-         return 'FY18 Q1';
+    case [1, 2,3].includes(month):
+        if(month == 1){
+          if(day > 15){
+            return 'FY19 Q1';
+          }else{
+            return 'FY18 Q4';
+          }
+        }else{
+          return 'FY19 Q1';
+        }
     case [4,5,6].includes(month):
          return 'FY18 Q3';
     case [7,8,9].includes(month):
          return 'FY18 Q3';
-    case [1, 2, 10,11,12].includes(month):
+    case [10,11,12].includes(month):
         return 'FY18 Q4';
   }
 }
