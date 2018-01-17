@@ -64,7 +64,7 @@ function getProjectOnboardArray(project){
   let customizedOnBoardData = getNextSunday(onBoardRawData.sort());
   let reducedOnboardData = reduceByDate(customizedOnBoardData);
   let dateToday = new Date();
-  let dateRange = genterateWeekDomain(DATE_RANGE[project].START,dateToday);\
+  let dateRange = genterateWeekDomain(DATE_RANGE[project].START,dateToday);
   let realOnboardArray = [];
   dateRange.forEach(function(date, finalIndex){
     let dateIndex = reducedOnboardData.findIndex(dateValuePair=>{
