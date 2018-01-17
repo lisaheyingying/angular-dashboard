@@ -9,6 +9,9 @@
     text-align: center;
   }
 }
+.line-section .legend{
+  margin-right: 106px;
+}
 
 .highlight-wrapper,
 .ecs-wrapper .highlight-wrapper2,
@@ -18,6 +21,7 @@
 }
 .highlight-wrapper,
 .ecs-wrapper .highlight-wrapper2,
+.isilon-wrapper .highlight-wrapper2,
 .overview-wrapper .highlight-wrapper2,
 ngx-charts-line-chart {
   position: relative;
@@ -51,9 +55,12 @@ ngx-charts-line-chart {
 
 // pseudo highlight object
 .isilon-wrapper .overview-trend ngx-charts-line-chart {
-  @include highlight(1%, 52%, 'Q3 FY18 \A Forecast: 33');
+  @include highlight(13%, 36%, 'Q3 FY18 \A Forecast: 33');
 }
 .isilon-wrapper .overview-trend .highlight-wrapper {
+  @include highlight(-10%, 63%, ' Q4  FY18 \A Forecast: 48');
+}
+.isilon-wrapper .overview-trend .highlight-wrapper2 {
   @include highlight(-18%, 91%, ' Q1 FY19 \A Forecast: 53');
 }
 // pseudo highlight object
