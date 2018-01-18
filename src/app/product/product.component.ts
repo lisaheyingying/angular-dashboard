@@ -105,7 +105,15 @@ export class ProductComponent implements OnInit {
           }
         }, []);
       this.teamDetail = teamArray;
-      let detailContent = teamArray.map(team=>{
+      let customizedTeamOrder = ['IME Sus', 'Data Management', 'EAT', 'Protocol - HDFS', 'Security', 'IME Validation', 'Central Test'];
+      let customizedTeamArray = customizedTeamOrder.map((team, index)=>{
+          let customizedIndex = teamArray.findIndex((item, index)=>{
+               return item.name === team;
+       })
+          return teamArray[customizedIndex]; 
+     })
+     customizedTeamArray =  customizedTeamArray.filter(s=>s);
+      let detailContent = customizedTeamArray.map(team=>{
         let rawdata = Object.assign({},team);
         let groups = JSON.parse(JSON.stringify(rawdata.groups));
         return groups.map((raw, index)=>{
