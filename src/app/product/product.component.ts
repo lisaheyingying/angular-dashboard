@@ -112,6 +112,7 @@ export class ProductComponent implements OnInit {
        })
           return teamArray[customizedIndex]; 
      })
+     this.localState.value === 'isilon'? customizedTeamArray = customizedTeamArray: customizedTeamArray = teamArray; 
      customizedTeamArray =  customizedTeamArray.filter(s=>s);
       let detailContent = customizedTeamArray.map(team=>{
         let rawdata = Object.assign({},team);

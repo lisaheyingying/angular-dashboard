@@ -28,14 +28,14 @@ const isPastDate = (date) => {
   if (typeof date === 'string') {
     let tmp = new Date(date);
     t = tmp.getTime();
-  } else t = (date - (25567 + 2)) * 86400 * 1000 // windows + 2
+  } else t = (date - (25567 + 1)) * 86400 * 1000 // windows + 2
   return Date.now() - t > 0 ? true : false; // today is future
 }
 
 const parseDate = (date) => {
     let res;
     if (typeof date === 'string') res = new Date(date); // shows 0:00
-    else res = new Date((date - (25567 + 2)) * 86400 * 1000 - HOUR8); // windows + 2, shows 8:00
+    else res = new Date((date - (25567 + 1)) * 86400 * 1000 - HOUR8); // windows + 2, shows 8:00
     return res;
 }
 
@@ -50,8 +50,8 @@ const getWorkDayPeriod = (start, end) => {
 export const getQuarter = date => {
   let uploadDate = parseDate(date),
       month = uploadDate.getMonth() + 1,
+     
       day = uploadDate.getDate();
-  
   switch(true) {
     case [1, 2,3].includes(month):
         if(month == 1){
