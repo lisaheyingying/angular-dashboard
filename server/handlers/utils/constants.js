@@ -24,14 +24,14 @@ export const EXPECT_OFFER_TREND = {
 export const DATE_RANGE = {
   isilon: {
     START: new Date('2017/6/25'),
-    END: new Date('2018/4/29')
+    END: new Date('2018/9/30')
   },
   ecs: {
     START: new Date('2017/6/25'),
-    END: new Date('2018/4/29')
+    END: new Date('2018/9/30')
   },
   overview: {
     START: new Date('2017/6/25'),
-    END: new Date('2018/4/29')
+    END: new Date('2018/9/30')
   }
 }
